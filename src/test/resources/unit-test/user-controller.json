@@ -1,0 +1,115 @@
+[
+  {
+    "name": "get-user-list-empty",
+    "request": {
+      "method": "GET",
+      "path": "/users"
+    },
+    "response": {
+      "status": 200,
+      "body": "[]"
+    }
+  },
+  {
+    "name": "get-user-list-with-two-users",
+    "request": {
+      "method": "GET",
+      "path": "/users"
+    },
+    "response": {
+      "status": 200,
+      "body": "[{\"name\":\"user1\"},{\"name\":\"user2\"}]"
+    }
+  },
+  {
+    "name": "save-user-response-created",
+    "request": {
+      "method": "POST",
+      "path": "/users",
+      "body": "{\"name\":\"user\"}"
+    },
+    "response": {
+      "status": 201,
+      "body": "{\"name\":\"user\"}"
+    }
+  },
+  {
+    "name": "save-user-bad-request",
+    "request": {
+      "method": "POST",
+      "path": "/users",
+      "body": "{\"name\":\"user\"}"
+    },
+    "response": {
+      "status": 400
+    }
+  },
+  {
+    "name": "delete-user-response-ok",
+    "request": {
+      "method": "DELETE",
+      "path": "/users",
+      "queryParameters": [
+        {
+          "name": "userId",
+          "value": 244
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": "{\"name\":\"user\"}"
+    }
+  },
+  {
+    "name": "delete-user-bad-request",
+    "request": {
+      "method": "DELETE",
+      "path": "/users",
+      "queryParameters": [
+        {
+          "name": "userId",
+          "value": 244
+        }
+      ]
+    },
+    "response": {
+      "status": 400
+    }
+  },
+  {
+    "name": "update-user-response-ok",
+    "request": {
+      "method": "PUT",
+      "path": "/users",
+      "body": "{\"name\":\"user\"}",
+      "queryParameters": [
+        {
+          "name": "userId",
+          "value": 244
+        }
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": "{\"name\":\"user\"}"
+    }
+  },
+  {
+    "name": "update-user-bad-request",
+    "request": {
+      "method": "PUT",
+      "path": "/users",
+      "body": "{\"name\":\"user\"}",
+      "queryParameters": [
+        {
+          "name": "userId",
+          "value": 244
+        }
+      ]
+    },
+    "response": {
+      "status": 400
+    }
+  }
+]

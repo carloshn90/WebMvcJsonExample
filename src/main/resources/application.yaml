@@ -1,0 +1,8 @@
+security:
+  jwt:
+    token:
+      header: Authorization
+      prefix: Bearer
+      expirationHours: 10
+      secretKey: Pa9hWJr3zmtSXL7HxH6GEEfQdiOp9Cdu
+
